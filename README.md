@@ -1,12 +1,14 @@
-# 40亿个数字查找缺失数字问题
+# 4 Billion Find Missing Numbers
 
-问题来源于网间流传的问题,基本思路为以大化小,逐个击破。对各种参数进行参数测试,以求最佳参数。
+The problem comes from the problems circulating among the Internet. 
+The basic idea is to turn the big into the small and break them one by one. 
+Test various parameters for the best parameters.
 
 ## Features
 
-- 可手动设置数量,及分组数量
-- 同时实现多线程及单线程方法
-- CSV日志输出
+- The quantity and grouping quantity can be set manually
+- Multi thread and single thread methods are implemented at the same time
+- CSV log output
 
 ## Example
 
@@ -14,13 +16,13 @@
 
 ## Result
 
-- 数量低于4W时,单线程快
-- 分区小,更快
-- 单循环更快
-- 高于4WW时分区需要小于64
+- Less than 40000, the single thread is fast
+- Grouping is small and faster
+- Single cycle faster
+- Higher than 400 million, the grouping needs to be less than 64
 
 ## Optimum Parameters
 
-- 高于4W时:多线程,64分区,单循环
-- 低于4W时:单线程,64分区,单循环
+- Higher than 40000:Multithreading, 64 Grouping, Single loop
+- Less than 40000:Single thread,64 Grouping,Single loop
 
