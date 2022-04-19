@@ -52,8 +52,57 @@ public class Program
         return Group;
     }
 
+    static ulong CCC = 0;
+    static System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+    private static void Move(string Src, string Tag)
+    {
+        CCC++;
+        //Console.WriteLine($"{Src}->{Tag}");
+        if (CCC % 100000000 == 0)
+        {
+            Console.WriteLine($"CCC:{CCC} ,{CCC/(ulong)sw.ElapsedMilliseconds}次/毫秒");
+            sw.Stop();
+            //Console.ReadLine();
+            sw.Start();
+        }
+    }
+
+    /// <summary>
+    /// 汉诺塔
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="A">Src</param>
+    /// <param name="B">Help:空的</param>
+    /// <param name="C">Tag</param>
+    private static void HNT(int n, string A, string B, string C)
+    {
+        if (n == 1)
+        {
+            Move(A, C);
+        }
+        else
+        {
+            HNT(n - 1, A, C, B);
+            Move(A, C);
+            HNT(n - 1, B, A, C);
+        }
+    }
+
     public static void Main(string[] argc)
     {
+        int n = 64;
+        if (argc.Length >= 1)
+        {
+            if (int.TryParse(argc[0], out n))
+            {
+                if (n <= 1)
+                    n = 1;
+            }
+        }
+        sw.Start();
+        HNT(n, "A", "B", "C");
+        return;
+
         if (File.Exists(TestLog) == false)
         {
             File.AppendAllLines(TestLog, new string[1] { Message.GetHeaderString() });
