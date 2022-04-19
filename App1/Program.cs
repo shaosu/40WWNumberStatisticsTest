@@ -69,6 +69,11 @@ public class Program
 
     /// <summary>
     /// 汉诺塔
+    /// I5-7500 CPU @ 3.40GHz 单线程
+    /// 64位Release    CCC:4300000000 ,242349次/毫秒
+    /// 64位Debug      CCC:500000000  ,74404次/毫秒
+    /// AnyCPU,Debug    CCC:300000000 ,75719次/毫秒
+    /// AnyCPU,Release CCC:1000000000 ,245398次/毫秒
     /// </summary>
     /// <param name="n"></param>
     /// <param name="A">Src</param>
