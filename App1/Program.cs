@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
@@ -60,7 +61,7 @@ public class Program
         //Console.WriteLine($"{Src}->{Tag}");
         if (CCC % 100000000 == 0)
         {
-            Console.WriteLine($"CCC:{CCC} ,{CCC/(ulong)sw.ElapsedMilliseconds}次/毫秒");
+            Console.WriteLine($"CCC:{CCC} ,{CCC / (ulong)sw.ElapsedMilliseconds}次/毫秒");
             sw.Stop();
             //Console.ReadLine();
             sw.Start();
@@ -92,9 +93,32 @@ public class Program
             HNT(n - 1, B, A, C);
         }
     }
+    /// <summary>
+    /// A41C-38F9
+    /// </summary>
+    private static void SqrtTest()
+    {
+        int[] nums = new int[] { 1, 3, 4, 513, 1234, 513 };
+        // 快速排序
+        for (int i = 0; i <  nums.Length; i++)
+        {
+            // 
+            Console.WriteLine(nums[i]);
+            Console.WriteLine(i);
+            Console.WriteLine(i+1);
+            // ShellSort
+            // ShellSort
+            
+        }
+
+    }
+
 
     public static void Main(string[] argc)
     {
+        //CFindeStr aaa = new CFindeStr();
+        //aaa.Test();
+        //return;
         int n = 64;
         if (argc.Length >= 1)
         {
